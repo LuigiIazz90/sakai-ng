@@ -1,6 +1,6 @@
 <div *ngIf="elixir" class="container mt-4 custom-background">
-  <button [routerLink]="['wizard-list']" class="btn btn-secondary">Back to Wizards</button>
-  <button [routerLink]="['wizard-list', 'wizard', wizardId, 'elixirs', elixirId]" class="btn btn-primary">Back to Elixir List</button>
+  <button [routerLink]="['/harry-potter/wizard-list']" class="btn btn-secondary">Back to Wizards</button>
+  <button [routerLink]="['../..']" class="btn btn-primary">Back to Elixir List</button>
 
   
   <h2 class="mt-3" style="color: #49ac35; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">{{ elixir.name }}</h2>

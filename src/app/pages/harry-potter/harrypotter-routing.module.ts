@@ -6,6 +6,11 @@ import { WizardListComponent } from './wizard-list/wizard-list.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
+    {
+      path: '',
+      redirectTo: 'wizard-list',
+      pathMatch: 'full'
+    },
 
     {
       path: 'wizard-list',
@@ -21,11 +26,7 @@ import { WizardListComponent } from './wizard-list/wizard-list.component';
     },
 
 
-    {
-      path: '',
-      redirectTo: 'wizard-list',
-      pathMatch: 'full'
-    }
+
 
   ])],
 

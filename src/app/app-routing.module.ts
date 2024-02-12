@@ -9,7 +9,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
             {
                 path: '', component: AppLayoutComponent,
                 children: [
-                    { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
+                    { path: '', loadChildren: () => import('./pages/home-cv/curriculum.module').then(m => m.CurriculumModule) },
                     { path: 'imdb', loadChildren: () => import('./pages/imdb/imdb.module').then(m => m.ImdbModule) },
                     { path: 'chuck-norris', loadChildren: () => import('./pages/chuck-norris/chuck-norris.module').then(m => m.ChuckNorrisModule) },
                     { path: 'harry-potter', loadChildren: () => import('./pages/harry-potter/harrypotter.module').then(m => m.HarryPotterModule) },
