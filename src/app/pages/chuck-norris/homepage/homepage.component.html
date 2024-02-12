@@ -1,0 +1,43 @@
+<div class="p-grid p-dir-col">
+  <h1 [ngStyle]="{ 'visibility': mostraTesto ? 'visible' : 'hidden' }" class="fadein animation-duration-1000 flex align-items-center justify-content-center font-bold border-round py-3 comic-style-text">
+    Dio perdona, Chuck NO !!! <img src="/assets/13f4093020fc96ba87eae8221d071af7.jpg" alt="Descrizione dell'immagine" style="width: 80px;">
+  </h1>
+</div>
+
+<h3 class="fadein animation-duration-1000 comic-style-text">
+  Genera una battuta random o per categoria, attenzione a non fare arrabbiare Chuck
+</h3>
+
+<div class="p-field comic-style-text fadein animation-duration-1000 " style="margin-left: 10px;">
+  <label for="toggleSwitch">Gif On/Gif Off</label>
+  <p-inputSwitch [(ngModel)]="stopGIF" (ngModelChange)="toggleGIF()"></p-inputSwitch>
+</div>
+
+<div class="center-image fadein animation-duration-1000" [ngStyle]="{ 'opacity': stopGIF ? 0 : 1 }">
+  <p-image src="/assets/chuck-norris.gif/" class="flex"></p-image>
+</div>
+
+<p class="bold-text comic-style-text ">{{ battuta.value }}</p>
+
+<div class="p-grid">
+  <div class="p-col">
+    <app-battuta-random></app-battuta-random>
+  </div>
+  <div class="p-col">
+    <app-categoria-battute></app-categoria-battute>
+  </div>
+</div>
+
+<div class="card comic-style-text fadein animation-duration-1000">
+  <p-panel [toggleable]="true" [collapsed]="true">
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center gap-2">
+        <p-avatar image="assets/logo.22d0a300.png" size="large" shape="circle"></p-avatar>
+        <span class="font-bold">Biografia</span>
+      </div>
+    </ng-template>
+    <p class="m-0">
+      Chuck Norris è un attore e esperto di arti marziali americano conosciuto principalmente per il ruolo da protagonista nella serie tv degli Anni '90 Walker Texas Ranger. Carlos Ray Norris nasce a Ryan, una cittadina dell'Oklahoma, il 10 marzo 1940 in una famiglia con origini native americane e irlandesi.
+    </p>
+  </p-panel>
+</div>

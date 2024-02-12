@@ -1,0 +1,19 @@
+<div class="p-grid p-dir-col">
+
+  <div class="p-field fadein animation-duration-1000" style="margin-bottom: 20px;">
+    <button (click)="getBattutaCategoriaRandom()" pButton label="Genera Battuta Categoria" class="p-button p-button-primary p-3 mt-2"></button>
+</div>
+<div class="p-field fadein animation-duration-1000" style="margin-top: 20px;">
+    <label for="categoriaDropdown">Seleziona una categoria:  </label>
+    <p-dropdown id="categoriaDropdown" [options]="options" [(ngModel)]="selectedOption" optionLabel="label" (onChange)="onSelect($event.value)" [style]="{'width':'13%'}"></p-dropdown>
+</div>
+
+  
+  
+  <p-dialog header="Battuta Categoria" [(visible)]="display" [modal]="true" showEffect="fade" [style]="{width: '30vw'}" [breakpoints]="{'960px': '75vw'}">
+    <p>{{ battutaCategoriaSelezionata.value }}</p>
+    <ng-template pTemplate="footer">
+      <button pButton icon="pi pi-check" (click)="display=false" label="Chiudi" class="p-button-outlined"></button>
+    </ng-template>
+  </p-dialog>
+</div>

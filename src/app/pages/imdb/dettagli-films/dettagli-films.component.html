@@ -1,0 +1,28 @@
+<div class="card-container">
+  <div *ngIf="dettagliFilm" class="flex justify-content-center fadeIn">
+    <!-- Prima card per l'immagine -->
+    <div class="card-left">
+      <p-card>
+        <ng-template pTemplate="header">
+          <img [src]="dettagliFilm['#IMG_POSTER']" [alt]="dettagliFilm['#TITLE'] + ' Poster'" />
+        </ng-template>
+      </p-card>
+    </div>
+
+    <!-- Seconda card per il resto delle informazioni -->
+    <div class="card-right">
+      <p-card>
+
+        <p-button label="Torna alla Ricerca" class="round-button" (click)="tornaAllaRicerca()"></p-button>
+        <hr>
+        <p><strong>Titolo:</strong> {{ dettagliFilm['#TITLE'] }}</p>
+        <p><strong>Anno - </strong>{{ dettagliFilm['#YEAR'] }}</p>
+        
+        <p><strong>Attori:</strong> {{ dettagliFilm['#ACTORS'] }}</p>
+        <p><strong>Rank:</strong> {{ dettagliFilm[ '#RANK'] }}</p>
+        <a [href]="dettagliFilm['#IMDB_URL']" target="_blank" class="round-button">Link a IMDb</a>
+        <hr>
+      </p-card>
+    </div>
+  </div>
+</div>

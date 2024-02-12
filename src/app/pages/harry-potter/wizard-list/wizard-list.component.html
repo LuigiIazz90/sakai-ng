@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center text-magical p-3 bg-dark rounded">Discover the Wizards</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let wizard of wizards">
+      <div class="card h-100 border border-5 border-primary bg-dark text-light">
+        <img class="card-img-top wizard-image mx-auto" src="assets/harry-potter-700x467.jpg" alt="Wizard Castle Image">
+        <div class="card-body">
+          <h5 class="card-title text-center text-light">{{ wizard.firstName }} {{ wizard.lastName }}</h5>
+          
+          <a [routerLink]="['wizard', wizard.id]" class="btn btn-primary btn-sm d-block mx-auto">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

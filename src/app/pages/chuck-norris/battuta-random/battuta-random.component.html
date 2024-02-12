@@ -1,0 +1,9 @@
+<div class="vignetta fadein animation-duration-1000">
+  <button pButton type="button" label="Genera Battuta Random" class="btn btn-primary p-3" (click)="showDialog()"></button>
+</div>
+
+<p-dialog header="Battuta Random" [(visible)]="displayDialog" [style]="{width: '70%'}">
+  <p>{{ battuta?.value }}</p>
+  <button pButton type="button" label="Chiudi" (click)="closeDialog()" class="p-button-outlined mr-2"></button> 
+  <button pButton type="button" label="Genera altra Battuta Random" (click)="generateAnotherRandomBattuta()" class="p-button-outlined ml-2"></button> 
+</p-dialog>

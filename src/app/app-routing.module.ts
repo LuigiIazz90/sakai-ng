@@ -10,6 +10,9 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                 path: '', component: AppLayoutComponent,
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
+                    { path: 'imdb', loadChildren: () => import('./pages/imdb/imdb.module').then(m => m.ImdbModule) },
+                    { path: 'chuck-norris', loadChildren: () => import('./pages/chuck-norris/chuck-norris.module').then(m => m.ChuckNorrisModule) },
+                    { path: 'harry-potter', loadChildren: () => import('./pages/harry-potter/harrypotter.module').then(m => m.HarryPotterModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
                     { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },

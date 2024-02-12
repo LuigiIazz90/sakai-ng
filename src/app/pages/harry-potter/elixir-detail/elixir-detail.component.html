@@ -1,0 +1,31 @@
+<div *ngIf="elixir" class="container mt-4 custom-background">
+  <button [routerLink]="['wizard-list']" class="btn btn-secondary">Back to Wizards</button>
+  <button [routerLink]="['wizard-list', 'wizard', wizardId, 'elixirs', elixirId]" class="btn btn-primary">Back to Elixir List</button>
+
+  
+  <h2 class="mt-3" style="color: #49ac35; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">{{ elixir.name }}</h2>
+  <p style="color: #828282;"><strong>Effect:</strong> {{ elixir.effect }}</p>
+
+  <ng-container *ngIf="elixir.characteristics">
+    <p style="color: #828282;"><strong>Characteristics:</strong> {{ elixir.characteristics }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="elixir.time">
+    <p style="color: #828282;"><strong>Time:</strong> {{ elixir.time }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="elixir.difficulty">
+    <p style="color: #828282;"><strong>Difficulty:</strong> {{ elixir.difficulty }}</p>
+  </ng-container>
+
+  <div *ngIf="elixir.ingredients && elixir.ingredients.length > 0">
+    <h3 class="mt-3" style="color: #5c5c5c; font-size: 1.8em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Ingredients:</h3>
+    <ul class="list-group">
+      <li *ngFor="let ingredient of elixir.ingredients" class="list-group-item" style="background-color: #2d2d2d; color: #ffffff;">{{ ingredient.name }}</li>
+    </ul>
+  </div>
+
+  <ng-container *ngIf="elixir.manufacturer">
+    <p style="color: #828282;"><strong>Manufacturer:</strong> {{ elixir.manufacturer }}</p>
+  </ng-container>
+</div>
